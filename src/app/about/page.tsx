@@ -8,7 +8,7 @@ export default function About() {
         <div className="about-text">
             <h1 className="about-title">About Me </h1>
           
-                <p className='about-paragraph'>My journey in IT began in 20 since then, I have had the privilege to work on a diverse range of projects, allowing me to refine my skills and approach to problem-solving.</p>
+                <p className='about-paragraph'>My journey in IT began in 2023 since then, I have had the privilege to work on a diverse range of projects, allowing me to refine my skills and approach to problem-solving.</p>
                 <p className=' about-paragraph'> I thrive on turning complex ideas into elegant solutions that not only meet user needs but also create lasting impacts. </p>
             </div>
 

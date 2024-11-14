@@ -19,7 +19,7 @@ export default function Header() {
             <h2 className='title'>Minal</h2>
         </div>
        
-        <div className={`nav-links ${isOpen ? 'flex' : 'hidden'} md:flex `}>
+        <div className={`nav-links ${isOpen ? 'nav-open' : 'nav-closed'} `}>
             <Link href={'./'} className='nav-link'>Home</Link>
             <Link href={'./about'} className='nav-link'>About</Link>
             <Link href={'./project'} className='nav-link'>Project</Link>
@@ -27,10 +27,10 @@ export default function Header() {
             <Link href={'./contact'}className='nav-link' >Contact</Link>
         </div>
         
-        <div>
+        <div className='icon'>
             <button onClick={toggleMenu}>
                 <IoMenu size={28}
-                className='md:hidden'/>
+                />
             </button>
         </div>
     </div>

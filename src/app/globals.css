@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .header-container {
   background-color: #09090b;
   color: #4b5563; 
@@ -5,6 +10,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 33px;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -32,46 +38,40 @@
   margin-right: 32px;
   margin-top: 12px; 
   font-weight: 600; 
-  gap: 16px; 
+  gap: 30px; 
 } 
 
 @media (min-width: 768px) {
   .nav-links {
       flex-direction: row;
-  }
-}
-
-.nav-link {
-  transition: transform 0.1s ease-in-out, z-index 0.1s ease-in-out;
-  cursor: pointer;
-}
-
-.nav-link:hover {
-  color: #4b5563;
-  transform: scale(1.1);
-  z-index: 10;
-}
-
-.menu-icon {
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .nav-links {
       display: flex;
-      flex-direction: row;
-  }
-  .menu-icon {
-      display: none;
   }
 }
 
-.open {
+.nav-open {
   display: flex;
 }
 
-.closed {
-  display: none;
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: larger;
+}
+
+.nav-link:hover {
+  color: #6b7280;
+}
+
+.icon {
+  display: block;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .icon {
+    display: none;
+  }
 }
 
 
@@ -161,22 +161,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   height: 100vh;
-  padding: 32px 16px;
 }
 
 @media (min-width: 768px) {
   .contact-container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .contact-container {
-    padding-left: 48px; 
-    padding-right: 48px;
+    padding: 0 48px; 
   }
 }
 
@@ -223,7 +219,7 @@
 
 .form-input {
   width: 100%;
-  max-width: 20rem; /* Tailwind's md:w-80 */
+  max-width: 20rem; 
   padding: 8px 16px;
   font-size: 14px;
   background-color: #27272a;
@@ -235,12 +231,12 @@
 }
 
 .form-input::placeholder {
-  color: #9ca3af; /* Tailwind's placeholder-gray-400 */
+  color: #9ca3af; 
 }
 
 .form-input:focus {
   border-color: #4b5563;
-  box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.5); /* Tailwind's focus:ring-2 focus:ring-gray-600 */
+  box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.5); 
 }
 
 .form-textarea {
@@ -251,6 +247,7 @@
   color: #e5e7eb;
   border: 1px solid #4b5563;
   border-radius: 0.375rem;
+  margin-bottom: 8px;
   outline: none;
   resize: none;
   transition: all 0.3s;
@@ -310,21 +307,12 @@
 
 /* main */
 .home-section {
-  padding: 80px 24px;
   background-color: #18181b;
   color: #4b5563; 
   min-height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .home-section {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
 }
 
 .home-container {
@@ -335,7 +323,7 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  gap: 1.5rem; /* Tailwind's space-y-6 */
+  gap: 1.5rem; 
 }
 
 @media (min-width: 768px) {
@@ -409,11 +397,13 @@
   margin-top: 16px;
   font-size: 18px;
   border-radius: 0.375rem;
-  background-color: #4b5563; /* Tailwind's bg-gray-600 */
+  background-color: #4b5563;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   transition: all 0.3s;
+  text-decoration: none;
+  color: #000;
 }
 
 @media (min-width: 768px) {
@@ -430,12 +420,7 @@
   gap: 1rem;
   font-size: 20px;
   font-weight: bold;
-  color: #000000; 
-}
-
-.github-button:hover {
-  background-color: #000000; 
-  color: #4b5563;
+  background-color: #4b5563;
 }
 
 .github-icon {
@@ -488,9 +473,9 @@
 }
 
 .projects-title {
-  font-size: 3rem; /* Tailwind's text-5xl */
+  font-size: 3rem; 
   font-weight: bold;
-  margin-bottom: 1rem; /* Tailwind's mb-4 */
+  margin-bottom: 1rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -525,8 +510,8 @@
 }
 
 .project-link {
-  color: #4b5563; /* Tailwind's text-gray-600 */
-  font-size: 1.25rem; /* Tailwind's text-xl */
+  color: #4b5563; 
+  font-size: 1.25rem; 
   cursor: pointer;
   text-decoration: none;
   transition: text-decoration 0.2s;
@@ -546,10 +531,14 @@
   padding-bottom: 80px; 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .skills-section {
+      flex-direction: column;
+  }
 }
 
 .skills-header {
@@ -567,6 +556,7 @@
 
 .skills-container {
   margin: 0 auto;
+  align-content: space-around;
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
@@ -585,9 +575,14 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .skills-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .skill-card {
-  width: 100%;
-  max-width: 350px;
+  width: 350px;
   height: 180px;
   background-color: #000000;
   border-radius: 6px;
@@ -615,10 +610,4 @@
   color: #4b5563;
   font-weight: bold;
   margin-top: 8px;
-}
-
-
-.main {
-  background-color:  #09090b;
-  height: 100%;
 }
